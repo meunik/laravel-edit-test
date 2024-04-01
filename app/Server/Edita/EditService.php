@@ -87,6 +87,8 @@ class EditService
 
         $before = $this->beforeService($table, $values);
 
+        $treatment = $this->treatmentService($table, $values, $keysEdit);
+
         // FACT EDITING
         foreach ($keysEdit as $item) {
             $exception = $this->exceptionService($table, $values, $item);
@@ -340,14 +342,22 @@ class EditService
         return true;
     }
 
-    private function treatmentService($table, $values, $column)
+    /**
+     * Substitui o valor pelo valor tratado caso exista essa função.
+     *
+     * @param  Model  $table
+     * @param  array  $values
+     * @param  array  $keysEdit
+     * @return mixed
+     */
+    private function treatmentService($table, $values, $keysEdit)
     {
         $table = $this->hidden($table);
 
         $this->laravelEdit = ($this->laravelEdit)?: new LaravelEdit;
         $this->laravelEdit->table = $table;
         $this->laravelEdit->values = $values;
-        $this->laravelEdit->column = $column;
+        $this->laravelEdit->keysEdit = $keysEdit;
 
         if (method_exists($table, 'treatment')) {
             $table->laravelEdit = $this->laravelEdit;
