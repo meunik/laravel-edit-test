@@ -23,7 +23,9 @@ class TesteController extends Controller
     public function edit(Request $request)
     {
         // return EditModel::table(Pessoa::class)->values($request->all())->run();
-        return Pessoa::edit($request->all())->run();
+        return Pessoa::edit($request)->run();
+        // Pessoa::find($request->id)->update($request->all());
+        // return Pessoa::find($request->id);
 
 
         // return Pessoa::find($request->id);

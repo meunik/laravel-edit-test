@@ -87,17 +87,28 @@ class EditService
 
         $before = $this->beforeService($table, $values);
 
-        $treatment = $this->treatmentService($table, $values, $keysEdit);
+        // $treatment = $this->treatmentService($table, $values, $keysEdit);
+
+        $valuesEdit = array_intersect_key($values, array_flip($keysEdit));
+        // $table->update($valuesEdit);
+
+        // if ($table->getTable() == 'enderecos') {
+        // if ($table->getTable() == 'casas') {
+        // if ($table->getTable() == 'veiculos') {
+        //     // dd($relationships);
+        //     dd($relationships, $values, $keysEdit, $valuesEdit, $table->getTable());
+        //     // $table->update($valuesEdit);
+        // }
 
         // FACT EDITING
-        foreach ($keysEdit as $item) {
-            $exception = $this->exceptionService($table, $values, $item);
-            if ($exception) continue;
+        // foreach ($keysEdit as $item) {
+        //     $exception = $this->exceptionService($table, $values, $item);
+        //     if ($exception) continue;
 
-            if ($this->date($table[$item]) != $values[$item]) $table[$item] = $values[$item];
-        }
+        //     if ($this->date($table[$item]) != $values[$item]) $table[$item] = $values[$item];
+        // }
 
-        $this->save($table);
+        // $this->save($table);
         $this->afterService($table, $values, $before);
 
         $this->relationships($table, $values, $relationships);
@@ -115,6 +126,7 @@ class EditService
         if (count($relationships) == 0) return $table;
 
         foreach ($relationships as $key => $value) {
+
             $key = $this->camelCaseToSnake_case($key);
 
             $exception = $this->exceptionService($table, $values, $key);
@@ -163,8 +175,8 @@ class EditService
 
         if (!is_null($table[$camelCase])) {
             foreach ($table[$camelCase] as $key => $object) {
-
-                if ($valuesCollection->contains($keyName, $object[$keyName]) == false) $this->deleteMissingObjectInObjectArrays($table, $relationship, $key, $object);
+                if ($valuesCollection->contains($keyName, $object[$keyName]) == false)
+                    $this->deleteMissingObjectInObjectArrays($table, $relationship, $key, $object);
 
                 if ($valuesCollection->contains($keyName, $object[$keyName])) {
                     $where = $valuesCollection->where($keyName, $object->$keyName);
