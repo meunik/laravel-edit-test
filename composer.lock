@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9afd63b252a143e2c419c8b010010f74",
+    "content-hash": "6b9fb4ac7f0c6f5214d0c3ea4b7553e8",
     "packages": [
         {
             "name": "brick/math",
@@ -1828,16 +1828,16 @@
         },
         {
             "name": "meunik/laravel-edit",
-            "version": "1.0.1",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/meunik/laravel-edit.git",
-                "reference": "a5d580abdfc9263002162fe38f127a6b418553c8"
+                "reference": "af87befc7b302c846cef2cfa13f26c232b924fb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/meunik/laravel-edit/zipball/a5d580abdfc9263002162fe38f127a6b418553c8",
-                "reference": "a5d580abdfc9263002162fe38f127a6b418553c8",
+                "url": "https://api.github.com/repos/meunik/laravel-edit/zipball/af87befc7b302c846cef2cfa13f26c232b924fb8",
+                "reference": "af87befc7b302c846cef2cfa13f26c232b924fb8",
                 "shasum": ""
             },
             "require": {
@@ -1869,9 +1869,9 @@
             ],
             "support": {
                 "issues": "https://github.com/meunik/laravel-edit/issues",
-                "source": "https://github.com/meunik/laravel-edit/tree/1.0.1"
+                "source": "https://github.com/meunik/laravel-edit/tree/2.0.0"
             },
-            "time": "2024-03-30T04:33:02+00:00"
+            "time": "2024-04-03T22:53:06+00:00"
         },
         {
             "name": "monolog/monolog",

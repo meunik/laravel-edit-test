@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use App\Server\Edita\Edit;
+use Meunik\Edit\Edit;
 
-class EditModel extends Edit
+class Edition extends Edit
 {
     public $deleteMissingObjectInObjectArrays = true;
     public $columnsCannotChange_defaults = ['id'];

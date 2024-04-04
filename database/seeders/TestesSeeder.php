@@ -20,12 +20,6 @@ class TestesSeeder extends Seeder
      */
     public function run(): void
     {
-        // Pessoa::factory(10)->create()->each(function ($pessoa) {
-        //     $pessoa->telefones()->saveMany(Telefone::factory(2)->make());
-        //     $pessoa->veiculos()->attach(Veiculo::factory(1)->create());
-        //     $pessoa->casas()->attach(Casa::factory(1)->create(['endereco_id' => Endereco::factory()->create()->id]));
-        //     $pessoa->relacionamentos()->saveMany(Relacionamento::factory(2)->make(['pessoa1_id' => $pessoa->id]));
-        // });
         Pessoa::factory(10)->create()->each(function ($pessoa) {
             $pessoa->telefones()->saveMany(Telefone::factory(2)->make());
             $pessoa->veiculos()->attach(Veiculo::factory(1)->create());

@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Server\Edita\HasEdit;
+use Meunik\Edit\HasEdit;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -19,30 +19,14 @@ class Casa extends Model
         'casa_tipo' => CasaTipo::class
     ];
 
-    // public function before()
+    // public function valuesEdit()
     // {
-    //     $this->laravelEdit->values['tipo'] = 'teste';
-    //     return $this->laravelEdit->values;
-    // }
-
-    // public function after()
-    // {
+    //     return ['teste'];
     //     dd(
-    //         'Casa - after',
-    //         $this->laravelEdit->values,
-    //         $this->laravelEdit->before,
-    //     );
-    // }
-
-    // public function exception()
-    // {
-    //     // dd($this->laravelEdit);
-    //     dd(
-    //         'Casa - exception',
+    //         'Casa - valuesEdit',
     //         // $this->laravelEdit->table,
     //         $this->laravelEdit->values,
-    //         $this->laravelEdit->attribute,
-    //         $this->laravelEdit->create,
+    //         $this->laravelEdit->keysEdit,
     //     );
     // }
 

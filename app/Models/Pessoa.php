@@ -2,9 +2,8 @@
 
 namespace App\Models;
 
-// use App\Server\Edita\Edit;
-use App\Models\EditModel;
-use App\Server\Edita\HasEdit;
+use App\Models\Edition;
+use Meunik\Edit\HasEdit;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -18,7 +17,7 @@ class Pessoa extends Model
     protected $hidden = ['pivot'];
     protected $with = ['relacionamentos', 'telefones', 'veiculos', 'casas'];
 
-    public $editModel = EditModel::class;
+    public $editModel = Edition::class;
     public $relationship = [
         'relacionamentos' => [Pessoa::class],
         'telefones' => [Telefone::class],
